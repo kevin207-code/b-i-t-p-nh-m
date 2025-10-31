@@ -17,7 +17,7 @@ void hoanvi(int a[][100], int& m, int& n) {
         cout << "Nhap dong x qua kich thuoc, nhap lai x: "; cin >> x;
     }
     cout << "Nhap dong y can hoan: "; cin >> y;
-    while (y < 0 && x > y) {
+    while (y < 0 && y > m) {
         cout << "Nhap dong y qua kich thuoc, nhap lai y: "; cin >> y;
     }
     //hoan vi hai dong
