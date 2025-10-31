@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+const int kt = 100;
+void nhapmatran(int A[][kt], int& m, int& n)
+{
+	cout << "nhap so dong : ";
+	cin >> m;
+	cout << "nhap so cot : ";
+	cin >> n;
+	for (int i = 0; i < m ; i++)
+		for (int j = 0; j < n; j++)
+		{
+			cout << "A[" << i << "][" << j << "] = ";
+			cin >> A[i][j];
+		}
+	return;
+}
+
+int main()
+{
+	int A[kt][kt], m, n;
+	nhapmatran(A,m,n);
+	return 0;
+}
