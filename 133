@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+void hoanvi(int a[][100], int& m, int& n) {
+    cout << "Nhap dong m: "; cin >> m;
+    cout << "Nhap cot n: "; cin >> n;
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << "Nhap [" << i << "][" << j << "]: ";
+            cin >> a[i][j];
+        }
+    }
+
+    int x, y;
+    cout << "Nhap dong x can hoan: "; cin >> x;
+    while (x < 0 && x > m) {
+        cout << "Nhap dong x qua kich thuoc, nhap lai x: "; cin >> x;
+    }
+    cout << "Nhap dong y can hoan: "; cin >> y;
+    while (y < 0 && x > y) {
+        cout << "Nhap dong y qua kich thuoc, nhap lai y: "; cin >> y;
+    }
+    //hoan vi hai dong
+    for (int i = 0; i < n; i++) {
+        int temp = a[x - 1][i];
+        a[x - 1][i] = a[y - 1][i];
+        a[y - 1][i] = temp;
+    }
+
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << a[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    int a[100][100], m, n;
+    hoanvi(a, m, n);
+}
